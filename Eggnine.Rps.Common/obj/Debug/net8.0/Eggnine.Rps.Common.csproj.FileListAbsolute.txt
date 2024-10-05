@@ -1,0 +1,12 @@
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/bin/Debug/net8.0/Eggnine.Rps.Common.deps.json
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/bin/Debug/net8.0/Eggnine.Rps.Common.dll
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/bin/Debug/net8.0/Eggnine.Rps.Common.pdb
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/Eggnine.Rps.Common.GeneratedMSBuildEditorConfig.editorconfig
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/Eggnine.Rps.Common.AssemblyInfoInputs.cache
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/Eggnine.Rps.Common.AssemblyInfo.cs
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/Eggnine.Rps.Common.csproj.CoreCompileInputs.cache
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/Eggnine.Rps.Common.sourcelink.json
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/Eggnine.Rps.Common.dll
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/refint/Eggnine.Rps.Common.dll
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/Eggnine.Rps.Common.pdb
+/home/RF/Eggnine.Rps/Eggnine.Rps.Common/obj/Debug/net8.0/ref/Eggnine.Rps.Common.dll

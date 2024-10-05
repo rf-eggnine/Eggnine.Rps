@@ -1,0 +1,63 @@
+@namespace Eggnine.Rps.Web.Pages.Shared
+
+@{
+    RpsUser? rpsUser = ViewData["User"] as RpsUser;
+}
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                @{if(rpsUser is null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/">Index</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/Privacy?@(Constants.QueryStringKeyAcceptedCookies)=false">Privacy</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/Home">Home</a>
+                    </li>
+                    <li class="nav-item navbar-text text-dark">
+                        <span id="score">Score: @(rpsUser.Score)</span>
+                    </li>
+                    @if(rpsUser.Name is null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/SignIn">Sign In</a>
+                        </li>
+                        <li class="nav-item navbar-text">
+                            or
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/SignUp">Sign Up</a>
+                        </li>
+                        <li class="nav-item navbar-text">
+                            to keep your score
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item navbar-text text-dark">
+                            <span id="greeting">&nbsp;&nbsp;Hello @(rpsUser.Name)</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/SignOut">Sign Out</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/Privacy">Privacy</a>
+                    </li>
+                }}
+            </ul>
+        </div>
+    </div>
+</nav>

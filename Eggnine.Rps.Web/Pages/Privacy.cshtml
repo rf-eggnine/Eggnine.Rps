@@ -1,0 +1,7 @@
+@page
+@model Privacy
+
+@{
+    ViewData["User"] = Model.RpsUser;
+}
+@await Html.PartialAsync("_Privacy", null)

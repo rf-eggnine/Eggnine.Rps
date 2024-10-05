@@ -1,0 +1,53 @@
+@page
+@namespace Eggnine.Rps.Web.Pages
+@model Home
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Rock Paper Scissors Home";
+    ViewData["User"] = Model.RpsUser;
+}
+
+<div id="content">
+    <h1>Rock Paper Scissors</h1>
+    <form method="post" id="actions">
+        <input type="hidden" name="action" id="hidden" />
+        <input type="button" value="Rock" id="rock" />
+        <input type="button" value="Paper" id="paper" />
+        <br />
+        <input type="button" value="Scissors" id="scissors" />
+        <input type="button" value="Random" id="random" />
+    </form>
+</div> 
+
+@section scripts
+{
+    <script>
+        var form = document.querySelector("#actions");
+        var hidden = document.querySelector("#hidden");
+        var rock = document.querySelector("#rock");
+        rock.onclick = function()
+        {
+            hidden.setAttribute("value", "Rock");
+            form.submit();
+        }
+        var paper = document.querySelector("#paper");
+        paper.onclick = function()
+        {
+            hidden.setAttribute("value", "Paper");
+            form.submit();
+        }
+        var scissors = document.querySelector("#scissors");
+        scissors.onclick = function()
+        {
+            hidden.setAttribute("value", "Scissors");
+            form.submit();
+        }
+        var random = document.querySelector("#random");
+        random.onclick = function()
+        {
+            hidden.setAttribute("value", "Random");
+            form.submit();
+        }
+    </script>
+}

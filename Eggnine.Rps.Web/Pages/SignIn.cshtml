@@ -1,0 +1,17 @@
+@page
+@namespace Eggnine.Rps.Web.Pages
+@model SignIn
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Rock Paper Scissors Sign In";
+    ViewData["User"] = await Model.GetUserFromCookieAsync();
+}
+<div id="content">
+    <h1>Sign in</h1>
+    <form method="post">
+        <label for="name">Name:</label><input id="name" name="name" type="text" /><br/>
+        <label for="passphrase">Passphrase:</label><input id="passphrase" name="passphrase" type="password" /><br/>
+        <input type="submit" value="Sign in" />
+    </form>
+</div>
