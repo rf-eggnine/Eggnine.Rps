@@ -28,7 +28,6 @@ internal class UserRepository : IUserRepository
     public async Task<RpsUser?> SignInUserAsync(HttpContext httpContext, bool acceptedCookies = false, 
         CancellationToken cancellationToken = default)
     {
-
         try
         {
             RpsUser? rpsUser = await httpContext.GetUserFromCookieAsync(this, _logger, cancellationToken);
@@ -61,7 +60,7 @@ internal class UserRepository : IUserRepository
         CancellationToken cancellationToken = default)
     {
         await httpContext.SignOutAsync();
-        RpsUser? rpsUser = await GetAsync(u => u.Id.Equals(id));
+        RpsUser? rpsUser = await GetAsync(u => u.Id.Equals(id), cancellationToken);
         if(rpsUser is not null)
         {
             _logger.LogInformation("User found with id {Id}", rpsUser.Id);
@@ -81,7 +80,7 @@ internal class UserRepository : IUserRepository
         try
         {
             if (_users.Any(u => u.Id.Equals(rpsUser.Id) 
-                || (u.Name?.Equals(rpsUser.Name, StringComparison.CurrentCultureIgnoreCase) ?? true)))
+                || (u.Name?.Equals(rpsUser.Name, StringComparison.CurrentCultureIgnoreCase) ?? false)))
             {
                 _logger.LogWarning("User not stored because of conflict with id {Id}", rpsUser.Id);
                 return false;
