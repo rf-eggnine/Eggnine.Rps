@@ -1,20 +1,16 @@
 //  ©️ 2024 by RF At EggNine All Rights Reserved
 
 using System;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using Eggnine.Rps.Common;
 using Eggnine.Rps.Core;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.EntityFrameworkCore;
-using Eggnine.Rps.Web.Exceptions;
 using Eggnine.Rps.Web.Extensions;
 
 namespace Eggnine.Rps.Web;
 
-[PrimaryKey(nameof(Id))]
 public class RpsUser : ClaimsPrincipal, IRpsPlayer
 {
     private readonly IRpsEngine _engine;
