@@ -1,0 +1,154 @@
+2024-10-06T00:17:10.4441316-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Starting]	Hosting starting
+2024-10-06T00:17:10.5104751-04:00	INFO	[Microsoft.Hosting.Lifetime]	[ListeningOnAddress]	Now listening on: http://localhost:5011
+2024-10-06T00:17:10.5107035-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Application started. Press Ctrl+C to shut down.
+2024-10-06T00:17:10.5109440-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Hosting environment: Development
+2024-10-06T00:17:10.5109768-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Content root path: /home/RF/Eggnine.Rps/Eggnine.Rps.Web
+2024-10-06T00:17:10.5110228-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Started]	Hosting started
+2024-10-06T00:17:25.2605824-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Retrieved id 5fbc9c02-f423-4899-8e5f-d677b4be23c7 from cookie
+2024-10-06T00:17:25.2620481-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Path /
+2024-10-06T00:17:34.5926186-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:17:34.5942310-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id 5fbc9c02-f423-4899-8e5f-d677b4be23c7 from cookie
+2024-10-06T00:17:34.5963153-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	User added with id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3
+2024-10-06T00:17:34.6016282-04:00	DBUG	[Eggnine.Rps.Web]	[0]	query string acceptedCookies true
+2024-10-06T00:17:34.6019508-04:00	DBUG	[Eggnine.Rps.Web]	[0]	Append cookie denied
+2024-10-06T00:17:34.6026160-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	User signed in
+2024-10-06T00:17:34.6027763-04:00	DBUG	[Eggnine.Rps.Web]	[0]	Append cookie denied
+2024-10-06T00:17:34.6029182-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	set cookie with value 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3
+2024-10-06T00:17:34.6029495-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:17:34.6265534-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:17:34.6267837-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:17:34.6270814-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:17:34.6270983-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:18:03.2294368-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:18:03.2295096-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Path /
+2024-10-06T00:18:07.0857276-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:18:07.0858516-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:18:07.0859012-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:18:07.0859340-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:18:07.0984048-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:18:07.0985363-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:18:07.0985957-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:18:07.0986256-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:19:30.6640979-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:19:30.6642124-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:19:30.6642543-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:19:30.6642674-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:19:30.6920393-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:19:30.6936875-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:19:30.6937596-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:19:30.6937765-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:26:14.1122375-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Application is shutting down...
+2024-10-06T00:26:14.6163621-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Stopping]	Hosting stopping
+2024-10-06T00:26:53.6366486-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Stopped]	Hosting stopped
+2024-10-06T00:27:49.6964543-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Starting]	Hosting starting
+2024-10-06T00:27:49.7633009-04:00	INFO	[Microsoft.Hosting.Lifetime]	[ListeningOnAddress]	Now listening on: http://localhost:5011
+2024-10-06T00:27:49.7634553-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Application started. Press Ctrl+C to shut down.
+2024-10-06T00:27:49.7636856-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Hosting environment: Development
+2024-10-06T00:27:49.7637246-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Content root path: /home/RF/Eggnine.Rps/Eggnine.Rps.Web
+2024-10-06T00:27:49.7637471-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Started]	Hosting started
+2024-10-06T00:28:16.5057181-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:28:16.5071589-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Path /
+2024-10-06T00:28:20.3718149-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:28:20.3742082-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id 9cf9d3d7-7aa4-4f83-aee4-4e11ef0650e3 from cookie
+2024-10-06T00:28:20.3772416-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	User added with id dba7b145-6423-4d3a-915f-cb74c8863751
+2024-10-06T00:28:20.3836649-04:00	DBUG	[Eggnine.Rps.Web]	[0]	query string acceptedCookies true
+2024-10-06T00:28:20.3845085-04:00	DBUG	[Eggnine.Rps.Web]	[0]	Append cookie denied
+2024-10-06T00:28:20.3859785-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	User signed in
+2024-10-06T00:28:20.3861499-04:00	DBUG	[Eggnine.Rps.Web]	[0]	Append cookie denied
+2024-10-06T00:28:20.3864929-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	set cookie with value dba7b145-6423-4d3a-915f-cb74c8863751
+2024-10-06T00:28:20.3865204-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:28:20.4086284-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:28:20.4087619-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id dba7b145-6423-4d3a-915f-cb74c8863751 from cookie
+2024-10-06T00:28:20.4090711-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:28:20.4090920-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:28:20.4201896-04:00	TRCE	[Eggnine.Rps.Core.RpsEngine]	[0]	Entering GetScoreAsync
+2024-10-06T00:28:42.6906315-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Application is shutting down...
+2024-10-06T00:28:42.6917463-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Stopping]	Hosting stopping
+2024-10-06T00:29:14.2011648-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Stopped]	Hosting stopped
+2024-10-06T00:30:35.0512991-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Starting]	Hosting starting
+2024-10-06T00:30:35.1174547-04:00	INFO	[Microsoft.Hosting.Lifetime]	[ListeningOnAddress]	Now listening on: http://localhost:5011
+2024-10-06T00:30:35.1176142-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Application started. Press Ctrl+C to shut down.
+2024-10-06T00:30:35.1179040-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Hosting environment: Development
+2024-10-06T00:30:35.1179258-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Content root path: /home/RF/Eggnine.Rps/Eggnine.Rps.Web
+2024-10-06T00:30:35.1179581-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Started]	Hosting started
+2024-10-06T00:30:38.4165630-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Retrieved id dba7b145-6423-4d3a-915f-cb74c8863751 from cookie
+2024-10-06T00:30:38.4175736-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Path /
+2024-10-06T00:30:41.2257915-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:30:41.2273300-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id dba7b145-6423-4d3a-915f-cb74c8863751 from cookie
+2024-10-06T00:30:41.2292703-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	User added with id b19f9c20-b4a0-4e5a-bd38-b0a2d009d401
+2024-10-06T00:30:41.2337838-04:00	DBUG	[Eggnine.Rps.Web]	[0]	query string acceptedCookies true
+2024-10-06T00:30:41.2341467-04:00	DBUG	[Eggnine.Rps.Web]	[0]	Append cookie denied
+2024-10-06T00:30:41.2349458-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	User signed in
+2024-10-06T00:30:41.2350833-04:00	DBUG	[Eggnine.Rps.Web]	[0]	Append cookie denied
+2024-10-06T00:30:41.2352107-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	set cookie with value b19f9c20-b4a0-4e5a-bd38-b0a2d009d401
+2024-10-06T00:30:41.2352432-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:30:41.2564875-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:30:41.2566749-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id b19f9c20-b4a0-4e5a-bd38-b0a2d009d401 from cookie
+2024-10-06T00:30:41.2571003-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:30:41.2571603-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:30:41.2688570-04:00	TRCE	[Eggnine.Rps.Core.RpsEngine]	[0]	Entering GetScoreAsync
+2024-10-06T00:30:41.2831326-04:00	TRCE	[Eggnine.Rps.Core.RpsEngine]	[0]	Exiting GetScoreAsync
+2024-10-06T00:30:47.1282007-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnPostAsync
+2024-10-06T00:30:47.1287812-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Retrieved id b19f9c20-b4a0-4e5a-bd38-b0a2d009d401 from cookie
+2024-10-06T00:30:47.1297876-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	User took action Rock
+2024-10-06T00:30:47.1321368-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:30:47.1321975-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id b19f9c20-b4a0-4e5a-bd38-b0a2d009d401 from cookie
+2024-10-06T00:30:47.1322704-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:30:47.1322864-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:30:47.1333410-04:00	TRCE	[Eggnine.Rps.Core.RpsEngine]	[0]	Entering GetScoreAsync
+2024-10-06T00:30:47.1376710-04:00	TRCE	[Eggnine.Rps.Core.RpsEngine]	[0]	Exiting GetScoreAsync
+2024-10-06T00:31:12.1680133-04:00	WARN	[Eggnine.Rps.Web.Pages.Index]	[0]	User id not found in cookies
+2024-10-06T00:31:12.1680548-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Path /
+2024-10-06T00:31:15.3331782-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:31:15.3333327-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User id not found in cookies
+2024-10-06T00:31:15.3338747-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not stored because of conflict with id bd681744-3754-465d-8914-c6899ad4ffa8
+2024-10-06T00:31:15.3339234-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not signed in with id bd681744-3754-465d-8914-c6899ad4ffa8
+2024-10-06T00:31:15.3339387-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:31:15.3373624-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:31:15.3374427-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User id not found in cookies
+2024-10-06T00:31:15.3375211-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not stored because of conflict with id dedc309b-58b0-4cfb-9423-d0136b9377a4
+2024-10-06T00:31:15.3375420-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not signed in with id dedc309b-58b0-4cfb-9423-d0136b9377a4
+2024-10-06T00:31:15.3375524-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:31:15.3389854-04:00	DBUG	[Eggnine.Rps.Web]	[0]	cookes not accepted
+2024-10-06T00:31:15.3390104-04:00	DBUG	[Eggnine.Rps.Web]	[0]	Append cookie denied
+2024-10-06T00:31:24.9442131-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnPostAsync
+2024-10-06T00:31:24.9443056-04:00	WARN	[Eggnine.Rps.Web.Pages.Index]	[0]	User id not found in cookies
+2024-10-06T00:31:24.9443313-04:00	WARN	[Eggnine.Rps.Web.Pages.Index]	[0]	Invalid user
+2024-10-06T00:31:24.9443585-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:31:24.9444302-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User id not found in cookies
+2024-10-06T00:31:24.9444891-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not stored because of conflict with id 45380297-a239-467e-aa4a-5e1cd9bf25d8
+2024-10-06T00:31:24.9445114-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not signed in with id 45380297-a239-467e-aa4a-5e1cd9bf25d8
+2024-10-06T00:31:24.9445192-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:31:26.3914209-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnPostAsync
+2024-10-06T00:31:26.3917325-04:00	WARN	[Eggnine.Rps.Web.Pages.Index]	[0]	User id not found in cookies
+2024-10-06T00:31:26.3918260-04:00	WARN	[Eggnine.Rps.Web.Pages.Index]	[0]	Invalid user
+2024-10-06T00:31:26.3919164-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:31:26.3921360-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User id not found in cookies
+2024-10-06T00:31:26.3928954-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not stored because of conflict with id acfdd329-2497-494e-a33f-4e85ac2c4414
+2024-10-06T00:31:26.3929169-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not signed in with id acfdd329-2497-494e-a33f-4e85ac2c4414
+2024-10-06T00:31:26.3929284-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:31:44.5710293-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnPostAsync
+2024-10-06T00:31:44.5711250-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Retrieved id b19f9c20-b4a0-4e5a-bd38-b0a2d009d401 from cookie
+2024-10-06T00:31:44.5712123-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	User took action Random
+2024-10-06T00:31:44.5712538-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Random action was Scissors
+2024-10-06T00:31:44.5714111-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:31:44.5714491-04:00	DBUG	[Eggnine.Rps.Web.UserRepository]	[0]	Retrieved id b19f9c20-b4a0-4e5a-bd38-b0a2d009d401 from cookie
+2024-10-06T00:31:44.5714759-04:00	INFO	[Eggnine.Rps.Web.UserRepository]	[0]	Initial user was not null
+2024-10-06T00:31:44.5714889-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:31:44.5721414-04:00	TRCE	[Eggnine.Rps.Core.RpsEngine]	[0]	Entering GetScoreAsync
+2024-10-06T00:31:44.5725849-04:00	TRCE	[Eggnine.Rps.Core.RpsEngine]	[0]	Exiting GetScoreAsync
+2024-10-06T00:32:20.2678668-04:00	WARN	[Eggnine.Rps.Web.Pages.Index]	[0]	User id not found in cookies
+2024-10-06T00:32:20.2679708-04:00	DBUG	[Eggnine.Rps.Web.Pages.Index]	[0]	Path /
+2024-10-06T00:32:25.5156724-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:32:25.5157614-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User id not found in cookies
+2024-10-06T00:32:25.5159353-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not stored because of conflict with id 99341bb4-9f52-40d9-aa70-3cc8a1788636
+2024-10-06T00:32:25.5159521-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not signed in with id 99341bb4-9f52-40d9-aa70-3cc8a1788636
+2024-10-06T00:32:25.5159560-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:32:25.5205769-04:00	TRCE	[Eggnine.Rps.Web.Pages.Index]	[0]	Entering OnGetAsync
+2024-10-06T00:32:25.5206555-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User id not found in cookies
+2024-10-06T00:32:25.5207041-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not stored because of conflict with id 1e20ccf2-2a79-46e9-a557-32bb81b0711c
+2024-10-06T00:32:25.5207241-04:00	WARN	[Eggnine.Rps.Web.UserRepository]	[0]	User not signed in with id 1e20ccf2-2a79-46e9-a557-32bb81b0711c
+2024-10-06T00:32:25.5207394-04:00	TRCE	[Eggnine.Rps.Web.UserRepository]	[0]	Exiting SignInUserAsync
+2024-10-06T00:36:24.3913527-04:00	INFO	[Microsoft.Hosting.Lifetime]	[0]	Application is shutting down...
+2024-10-06T00:36:24.3929961-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Stopping]	Hosting stopping
+2024-10-06T00:36:24.4033524-04:00	DBUG	[Microsoft.Extensions.Hosting.Internal.Host]	[Stopped]	Hosting stopped

@@ -1,4 +1,5 @@
 //  ©️ 2024 by RF At EggNine All Rights Reserved
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System;
 using System.Threading;
@@ -12,12 +13,15 @@ namespace Eggnine.Rps.Core
     public class RpsEngine : IRpsEngine, IDisposable
     {
         private readonly IDictionary<long, IDictionary<IRpsPlayer, RpsAction>> _playerActionsByTurn;
+        private readonly ILogger _logger;
         private long _turn;
         private long _turnTimer;
         private SemaphoreSlim _semaphore;
         private bool _disposed;
-        public RpsEngine(long turn = 0, IDictionary<long, IDictionary<IRpsPlayer, RpsAction>>? playerActionsByTurn = null)
+        public RpsEngine(ILogger<RpsEngine> logger, 
+            long turn = 0, IDictionary<long, IDictionary<IRpsPlayer, RpsAction>>? playerActionsByTurn = null)
         {
+            _logger = logger;
             _playerActionsByTurn = playerActionsByTurn ?? new Dictionary<long, IDictionary<IRpsPlayer, RpsAction>>();
             _turn = turn;
             _turnTimer = 0;
@@ -62,21 +66,29 @@ namespace Eggnine.Rps.Core
         public async Task<long> GetScoreAsync(IRpsPlayer player, CancellationToken cancellationToken = default)
         {
             CheckIfDisposed();
-            long turn = _turn;
-            ConcurrentBag<long> scores = new();
-            await Task.Run(() => new Range(0,_turn).AsParallel().ForAll(async turn =>
+            _logger.LogTrace("Entering {MethodName}", nameof(GetScoreAsync));
+            try
             {
-                if (!TryGet(_playerActionsByTurn, turn, out IDictionary<IRpsPlayer,RpsAction> playerActions))
+                long turn = _turn;
+                ConcurrentBag<long> scores = new();
+                await Task.Run(() => new Range(0,_turn).AsParallel().ForAll(async turn =>
                 {
-                    return;
-                }
-                if (!TryGet(playerActions, player, out RpsAction action))
-                {
-                    return;
-                }
-                scores.Add(await GetScoreOnTurnAsync(turn, action, cancellationToken));
-            }));
-            return scores.Sum();
+                    if (!TryGet(_playerActionsByTurn, turn, out IDictionary<IRpsPlayer,RpsAction> playerActions))
+                    {
+                        return;
+                    }
+                    if (!TryGet(playerActions, player, out RpsAction action))
+                    {
+                        return;
+                    }
+                    scores.Add(await GetScoreOnTurnAsync(turn, action, cancellationToken));
+                }));
+                return scores.Sum();
+            }
+            finally
+            {
+                _logger.LogTrace("Exiting {MethodName}", nameof(GetScoreAsync));
+            }
         }
 
         public Task<long> GetScoreOnTurnAsync(long turn, RpsAction action, CancellationToken cancellationToken = default)

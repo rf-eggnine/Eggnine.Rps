@@ -53,7 +53,7 @@ public class Range : IEnumerable<long>
             }
             else
             {
-                _index--;
+                _index++;
             }
             if(_index > _range._end)
             {
