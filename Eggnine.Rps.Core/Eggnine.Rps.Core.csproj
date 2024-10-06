@@ -4,5 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Eggnine.Rps.Common/Eggnine.Rps.Common.csproj" />
+  </ItemGroup>
   
 </Project>

@@ -15,7 +15,6 @@ namespace Eggnine.Rps.Web.Pages;
 public class Home : PageModel
 {
     private readonly Random _random;
-    private readonly string[] _actions = ["rock","paper","scissors","random"];
     private readonly ILogger _logger;
     private readonly IUserRepository _users;
     private readonly IRpsEngine _engine;
@@ -42,7 +41,7 @@ public class Home : PageModel
         if(acceptedCookies)
         {
             HttpContext.Response.Headers.Append(Constants.HeaderAcceptedCookies, "true");
-            return RedirectToPage("home");
+            return RedirectToPage("Home");
         };
         return Page();
     }

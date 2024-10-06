@@ -53,8 +53,7 @@ public class SignIn : PageModel
             Validations.Add(new UserNotFoundValidation());
             return Page();
         }
-        await Task.Run(HttpContext.SignOutAsync);
-        await Task.Run(async() => await HttpContext.SignInAsync(rpsUser));
+        await _users.SignInUserAsync(HttpContext, rpsUser.Id, cancellationToken);
         return RedirectToPage("home");
     }
 }

@@ -25,8 +25,10 @@ internal class UserRepository : IUserRepository
         _logger = logger;
     }
     
-    public async Task<RpsUser?> SignInUserAsync(HttpContext httpContext, bool acceptedCookies = false, CancellationToken cancellationToken = default)
+    public async Task<RpsUser?> SignInUserAsync(HttpContext httpContext, bool acceptedCookies = false, 
+        CancellationToken cancellationToken = default)
     {
+
         try
         {
             RpsUser? rpsUser = await httpContext.GetUserFromCookieAsync(this, _logger, cancellationToken);
@@ -40,7 +42,7 @@ internal class UserRepository : IUserRepository
                     await httpContext.AuthenticateAsync();
                     await Task.Run(async () => await httpContext.SignInAsync(rpsUser), cancellationToken);
                     _logger.LogInformation("User signed in");
-                    httpContext.Response.Headers.Append("set-cookie", $"{Constants.UserSessionCookieKey}={rpsUser.GetId()}");
+                    httpContext.Response.Cookies.Append(Constants.UserSessionCookieKey, rpsUser.GetId().ToString());
                     _logger.LogInformation("set cookie with value {id}", rpsUser.GetId());
                     return rpsUser;
                 }
@@ -54,6 +56,23 @@ internal class UserRepository : IUserRepository
         {
             _logger.LogTrace("Exiting {MethodName}", nameof(SignInUserAsync));
         }
+    }
+    public async Task<RpsUser?> SignInUserAsync(HttpContext httpContext, Guid id, 
+        CancellationToken cancellationToken = default)
+    {
+        await httpContext.SignOutAsync();
+        RpsUser? rpsUser = await GetAsync(u => u.Id.Equals(id));
+        if(rpsUser is not null)
+        {
+            _logger.LogInformation("User found with id {Id}", rpsUser.Id);
+            await httpContext.AuthenticateAsync();
+            await Task.Run(async () => await httpContext.SignInAsync(rpsUser), cancellationToken);
+            _logger.LogInformation("User signed in");
+            httpContext.Response.Cookies.Append(Constants.UserSessionCookieKey, rpsUser.GetId().ToString());
+            _logger.LogInformation("set cookie with value {id}", rpsUser.GetId());
+            return rpsUser;
+        }
+        return null;
     }
 
     public async Task<bool> AddAsync(RpsUser rpsUser, CancellationToken cancellationToken = default)

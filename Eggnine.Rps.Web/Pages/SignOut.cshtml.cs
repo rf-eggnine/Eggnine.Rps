@@ -32,8 +32,9 @@ public class SignOut : PageModel
 
     public async Task<IActionResult> OnGetAsync(CancellationToken cancellationToken)
     {
+        _logger.LogTrace("Entering {MethodName}", nameof(OnGetAsync));
         await HttpContext.SignOutAsync();
-        HttpContext.Response.Headers.Append("set-cookie", $"{Constants.UserSessionCookieKey}=deleted; expires=Thu, 01 Jan 1970 00:00:00 GMT");
+        HttpContext.Response.Cookies.Delete(Constants.UserSessionCookieKey);
         return RedirectToPage("/Index");
     }
 }

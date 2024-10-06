@@ -28,12 +28,6 @@ namespace Eggnine.Rps.Web
             builder.Services.AddRpsUsers();
             builder.Services.AddRazorPages();
             builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddFile("rps.log", append:true));
-            builder.Services.Configure<CookiePolicyOptions>(options =>
-            {
-                options.CheckConsentNeeded = context => (!(context.User as RpsUser)?.HasAcceptedCookies) ?? true;
-                options.ConsentCookie.Domain = "eggnine.com";
-                options.ConsentCookie.Name = "CookieConsent";
-            });
             builder.WebHost.ConfigureKestrel(options => 
                         options.AddServerHeader = false);
 
@@ -64,7 +58,7 @@ namespace Eggnine.Rps.Web
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-            app.UseCookiePolicy(new CookiePolicyOptions
+            app.UseCookiePolicy(new CookiePolicyOptions()
             {
                 CheckConsentNeeded = context => 
                 {
@@ -72,22 +66,45 @@ namespace Eggnine.Rps.Web
                         && headerAcceptedCookies)
                     {
                         app.Logger.LogDebug("header acceptedCookies true");
-                        return true;
+                        return false;
                     }
                     if(bool.TryParse(context.Request.Query[Constants.QueryStringKeyAcceptedCookies], out bool acceptCookies)
                         && acceptCookies)
                     {
                         app.Logger.LogDebug("query string acceptedCookies true");
-                        return true;
+                        return false;
                     }
                     if(context.Request.Cookies.ContainsKey(Constants.UserSessionCookieKey))
                     {
                         app.Logger.LogDebug("cookie already set");
-                        return true;
+                        return false;
                     }
                     app.Logger.LogDebug("cookes not accepted");
-                    return false;
-                }
+                    return true;
+                },
+                ConsentCookieValue = $"UserAcceptedCookiesOn{DateTime.UtcNow}",
+                OnAppendCookie = context => 
+                {
+                    if(context.HasConsent)
+                    {
+                        context.IssueCookie = true;
+                    }
+                    else
+                    {
+                        app.Logger.LogDebug("Append cookie denied");
+                    }
+                },
+                OnDeleteCookie = context =>
+                {
+                    if(context.HasConsent)
+                    {
+                        context.IssueCookie = true;
+                    }
+                    else
+                    {
+                        app.Logger.LogDebug("Delete cookie denied");
+                    }
+                },
             });
             app.UseStaticFiles();
             app.UseRouting();
