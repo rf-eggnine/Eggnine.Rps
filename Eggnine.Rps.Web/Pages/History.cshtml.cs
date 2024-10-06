@@ -34,6 +34,15 @@ public class History : PageModel
         return Page();
     }
 
-    public async Task<long> ActionsAsync(RpsAction action, long turn)
-        => await _engine.GetActionsOnTurnAsync(turn, action);
+    public async Task<long> ActionsAsync(RpsAction action, long turn, CancellationToken cancellationToken = default)
+        => await _engine.GetActionsOnTurnAsync(turn, action, cancellationToken);
+    
+    public async Task<RpsAction> ActionAsync(RpsUser? user, CancellationToken cancellationToken = default)
+    {
+        if(user is null)
+        {
+            return RpsAction.None;
+        }
+        return await _engine.GetActionOnTurnAsync(await _engine.GetTurnAsync(cancellationToken), user, cancellationToken);
+    }
 }

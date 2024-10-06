@@ -129,6 +129,19 @@ namespace Eggnine.Rps.Core
             return Task.FromResult(playerActions.Values.LongCount(v => v == action));
         }
 
+        public Task<RpsAction> GetActionOnTurnAsync(long turn, IRpsPlayer player, CancellationToken cancellationToken = default)
+        {
+            if (!TryGet(_playerActionsByTurn, _turn, out IDictionary<IRpsPlayer, RpsAction> playerActions))
+            {
+                return Task.FromResult(RpsAction.None);
+            }
+            if (!TryGet(playerActions, player, out RpsAction action))
+            {
+                return Task.FromResult(RpsAction.None);
+            }
+            return Task.FromResult(action);
+        }
+
         private bool TryGet(IDictionary<IRpsPlayer, RpsAction> dictionary, IRpsPlayer player, out RpsAction rpsAction)
         {
             try

@@ -10,17 +10,21 @@
     ViewData["User"] = await Model.GetUserFromCookieAsync();
 }
 <div id="content">
-    <ul>
-        @foreach(long turn in new Range(0, Model.Turn))
-        {
-            <li>
-                Turn: @turn
-                <ul>
-                    <li>Rocks: @(await Model.ActionsAsync(RpsAction.Rock, turn))</li>
-                    <li>Papers: @(await Model.ActionsAsync(RpsAction.Paper, turn))</li>
-                    <li>Scissors: @(await Model.ActionsAsync(RpsAction.Scissors, turn))</li>
-                </ul>
-            </li>
-        }
-    </ul>
+    <span>
+        <ul>
+            @foreach(long turn in new Range(0, Model.Turn))
+            {
+                RpsAction action = await Model.ActionAsync(ViewData["User"] as RpsUser);
+                <li>
+                    Turn: @turn
+                    <ul>
+                        <li>Player action: @action</li>
+                        <li>Rocks: @(await Model.ActionsAsync(RpsAction.Rock, turn))</li>
+                        <li>Papers: @(await Model.ActionsAsync(RpsAction.Paper, turn))</li>
+                        <li>Scissors: @(await Model.ActionsAsync(RpsAction.Scissors, turn))</li>
+                    </ul>
+                </li>
+            }
+        </ul>
+    </span>
 </div>
