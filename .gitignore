@@ -35,12 +35,6 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-A
-B
-B
-B
-B
-B
-B
-B
-.vs/
+
+# Eggnine
+rps.log
