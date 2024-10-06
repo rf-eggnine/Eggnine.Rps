@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eggnine.Rps.Common", "Eggni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eggnine.Rps.Web", "Eggnine.Rps.Web\Eggnine.Rps.Web.csproj", "{5A8676AC-BC11-401A-82F4-DA38E1CCCE56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eggnine.Rps.Core.Tests", "Eggnine.Rps.Core.Tests\Eggnine.Rps.Core.Tests.csproj", "{EBDEA223-E47E-4434-950E-BD8CBA076A3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5A8676AC-BC11-401A-82F4-DA38E1CCCE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A8676AC-BC11-401A-82F4-DA38E1CCCE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A8676AC-BC11-401A-82F4-DA38E1CCCE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDEA223-E47E-4434-950E-BD8CBA076A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDEA223-E47E-4434-950E-BD8CBA076A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDEA223-E47E-4434-950E-BD8CBA076A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDEA223-E47E-4434-950E-BD8CBA076A3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

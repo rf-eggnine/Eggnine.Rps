@@ -14,25 +14,25 @@ namespace Eggnine.Rps.Core
     {
         private readonly IDictionary<long, IDictionary<IRpsPlayer, RpsAction>> _playerActionsByTurn;
         private readonly ILogger _logger;
+        private readonly long _turnTime;
         private long _turn;
         private long _turnTimer;
         private SemaphoreSlim _semaphore;
         private bool _disposed;
-        public RpsEngine(ILogger<RpsEngine> logger, 
+        public RpsEngine(ILogger<RpsEngine> logger, long turnTime = 5000,
             long turn = 0, IDictionary<long, IDictionary<IRpsPlayer, RpsAction>>? playerActionsByTurn = null)
         {
             _logger = logger;
             _playerActionsByTurn = playerActionsByTurn ?? new Dictionary<long, IDictionary<IRpsPlayer, RpsAction>>();
             _turn = turn;
             _turnTimer = 0;
+            _turnTime = turnTime;
             _semaphore = new SemaphoreSlim(1);
         }
         public async Task ActAsync(IRpsPlayer player, RpsAction action, CancellationToken cancellationToken = default)
         {
             CheckIfDisposed();
-            if (action != RpsAction.Rock
-                && action != RpsAction.Scissors
-                && action != RpsAction.Paper)
+            if (!action.Validate(false))
             {
                 return;
             }
@@ -43,7 +43,7 @@ namespace Eggnine.Rps.Core
             await _semaphore.WaitAsync(cancellationToken);
             try
             {
-                if(_turnTimer > 0 && DateTime.UtcNow.Ticks > 5000)
+                if(_turnTimer > 0 && DateTime.UtcNow.Ticks > _turnTimer + _turnTime)
                 {
                     _turnTimer = 0;
                     _turn++;
@@ -71,8 +71,9 @@ namespace Eggnine.Rps.Core
             {
                 long turn = _turn;
                 ConcurrentBag<long> scores = new();
-                await Task.Run(() => new Range(0,_turn).AsParallel().ForAll(async turn =>
+                await Task.Run(() => new Range(0,turn).AsParallel().ForAll(async turn =>
                 {
+                    _logger.LogDebug("Getting Score for turn {Turn}", turn);
                     if (!TryGet(_playerActionsByTurn, turn, out IDictionary<IRpsPlayer,RpsAction> playerActions))
                     {
                         return;
@@ -94,20 +95,23 @@ namespace Eggnine.Rps.Core
         public Task<long> GetScoreOnTurnAsync(long turn, RpsAction action, CancellationToken cancellationToken = default)
         {
             CheckIfDisposed();
-            if (!TryGet(_playerActionsByTurn, _turn, out IDictionary<IRpsPlayer, RpsAction> playerActions))
+            _logger.LogDebug("Getting Score on turn {Turn}", turn);
+            if (!TryGet(_playerActionsByTurn, turn, out IDictionary<IRpsPlayer, RpsAction> playerActions))
             {
                 return Task.FromResult(0L);
             }
-            int rocks = playerActions.Values.Count(v => v == RpsAction.Rock);
-            int scissors = playerActions.Values.Count(v => v == RpsAction.Scissors);
-            int papers = playerActions.Values.Count(v => v == RpsAction.Paper);
-            return Task.FromResult((long)(action switch 
+            long rocks = playerActions.Values.LongCount(v => v.Equals(RpsAction.Rock));
+            long scissors = playerActions.Values.LongCount(v => v.Equals(RpsAction.Scissors));
+            long papers = playerActions.Values.LongCount(v => v.Equals(RpsAction.Paper));
+            long score = action switch 
             {
                 RpsAction.Rock => scissors - papers,
                 RpsAction.Scissors => papers - rocks,
                 RpsAction.Paper => rocks - scissors,
                 _ => 0,
-            }));
+            };
+            _logger.LogDebug("Score on turn {Turn} for action {Action} was {Score}", turn, action, score);
+            return Task.FromResult(score);
         }
 
         public Task<long> GetTurnAsync(CancellationToken cancellationToken = default)
@@ -144,29 +148,23 @@ namespace Eggnine.Rps.Core
 
         private bool TryGet(IDictionary<IRpsPlayer, RpsAction> dictionary, IRpsPlayer player, out RpsAction rpsAction)
         {
-            try
+            if(dictionary.ContainsKey(player))
             {
                 rpsAction = dictionary[player];
                 return true;
             }
-            catch
-            {
-                rpsAction = RpsAction.None;
-                return false;
-            }
+            rpsAction = RpsAction.None;
+            return false;
         }
         private bool TryGet(IDictionary<long, IDictionary<IRpsPlayer, RpsAction>> dictionary, long turn, out IDictionary<IRpsPlayer,RpsAction> playerActions)
         {
-            try
+            if(dictionary.ContainsKey(turn))
             {
                 playerActions = dictionary[turn];
                 return playerActions != null;
             }
-            catch
-            {
-                playerActions = new Dictionary<IRpsPlayer, RpsAction>();
-                return false;
-            }
+            playerActions = new Dictionary<IRpsPlayer, RpsAction>();
+            return false;
         }
 
         private void CheckIfDisposed()
