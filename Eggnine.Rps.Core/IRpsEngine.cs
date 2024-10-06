@@ -41,6 +41,15 @@ namespace Eggnine.Rps.Core
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task<long> GetScoreOnTurnAsync(long turn, RpsAction action, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the number of the given action that were played on the given turn
+        /// </summary>
+        /// <param name="turn"></param>
+        /// <param name="action"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<long> GetActionsOnTurnAsync(long turn, RpsAction action, CancellationToken cancellationToken = default);
     }
 }
 

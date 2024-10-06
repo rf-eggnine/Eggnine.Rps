@@ -116,6 +116,19 @@ namespace Eggnine.Rps.Core
             return Task.FromResult(_turn);
         }
 
+        public Task<long> GetActionsOnTurnAsync(long turn, RpsAction action, CancellationToken cancellationToken = default)
+        {
+            if(!action.Validate(false))
+            {
+                throw new ArgumentException($"Invalid action {action}");
+            }
+            if (!TryGet(_playerActionsByTurn, _turn, out IDictionary<IRpsPlayer, RpsAction> playerActions))
+            {
+                return Task.FromResult(0L);
+            }
+            return Task.FromResult(playerActions.Values.LongCount(v => v == action));
+        }
+
         private bool TryGet(IDictionary<IRpsPlayer, RpsAction> dictionary, IRpsPlayer player, out RpsAction rpsAction)
         {
             try
